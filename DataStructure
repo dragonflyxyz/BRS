@@ -1,1 +1,39 @@
 
+2016-10-11
+    修改服务中心端数据结构BrsInfo,增加CampusId字段
+    添加服务中心端表：CampusInfo
+    
+    
+    -- ----------------------------
+    -- Table structure for `campusinfo`
+    -- ----------------------------
+    DROP TABLE IF EXISTS `campusinfo`;
+    CREATE TABLE `campusinfo` (
+      `campusid` varchar(20) NOT NULL,
+      `campusname` varchar(40) DEFAULT NULL,
+      `provinceid` varchar(20) DEFAULT NULL,
+      `provincename` varchar(20) DEFAULT NULL,
+      `cityid` varchar(20) DEFAULT NULL,
+      `cityname` varchar(20) DEFAULT NULL,
+      `districtid` varchar(20) DEFAULT NULL,
+      `districtname` varchar(20) DEFAULT NULL,
+      PRIMARY KEY (`campusid`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of campusinfo
+-- ----------------------------
+INSERT INTO `campusinfo` VALUES ('001', '浙江大学玉泉校区', '330000', '浙江省', '330100', '杭州市', '330110', '西湖区');
+-- ----------------------------
+CampusInfo 校区位置信息表（服务中心端）
+                  表存储引擎：InnoDB
+     字段	        数据类型	    定义	  是否主键索引
+    CampusId	    varchar(20)	校区Id    	PK
+    CampusName	  varchar(40)	校区名称	
+    ProvinceId	  varchar(20)	所在省Id	
+    ProvinceName	varchar(20)	所在省名称	
+    CityId	      varchar(20)	所在城市Id	
+    CityName	    varchar(20)	所在城市名称	
+    DistrictId	  varchar(20)	所在区Id	
+    DistrictName	varchar(20)	所在区名称	
+
